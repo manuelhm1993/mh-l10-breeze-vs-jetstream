@@ -14,7 +14,8 @@
     }
 @endphp
 
-<article class="{{ $clases }} border-l-4 p-4" role="alert">
+{{-- Cualquier atributo que no se rescate en props queda almacenado en el array attributes --}}
+<article class="{{ $clases }} border-l-4 p-4" role="alert" {{ $attributes }}>
     <h2 class="font-bold">{{ $title }}</h2>
     {{ $slot }}
 </article>
