@@ -1,4 +1,4 @@
-@props(['type'])
+@props(['type' => 'info'])
 
 @php
     switch ($type) {
