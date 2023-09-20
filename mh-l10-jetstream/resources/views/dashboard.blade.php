@@ -12,13 +12,13 @@
                     $type = 'danger';
                 @endphp
 
-                <x-mh.alert :type="$type" id="alerta" class="mb-4">
+                <x-mh.alert2 :type="$type" id="alerta" class="mb-4">
                     <x-slot:title>
                         Título desde el slot con nombre
                     </x-slot:title>
 
                     <p>Este es un texto de prueba</p>
-                </x-mh.alert>
+                </x-mh.alert2>
 
                 <p>Hola mundo</p>
             </div>
