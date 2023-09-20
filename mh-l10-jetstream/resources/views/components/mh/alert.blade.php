@@ -14,8 +14,8 @@
     }
 @endphp
 
-{{-- Cualquier atributo que no se rescate en props queda almacenado en el array attributes --}}
-<article class="{{ $clases }} border-l-4 p-4" role="alert" {{ $attributes }}>
+{{-- Integrar o unir los atributos del componente con las de la vista que la llama --}}
+<article {{ $attributes->merge(['class' => "$clases border-l-4 p-4", 'role' =>"alert"]) }}>
     <h2 class="font-bold">{{ $title }}</h2>
     {{ $slot }}
 </article>
