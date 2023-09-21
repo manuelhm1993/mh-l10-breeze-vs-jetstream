@@ -15,6 +15,8 @@ class CheckAge
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        // return $next($request);
+
+        return to_route('home');
     }
 }
