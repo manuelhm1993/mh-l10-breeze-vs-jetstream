@@ -16,7 +16,8 @@ class CheckAge
     public function handle(Request $request, Closure $next): Response
     {
         // Si el usuario es menor de edad se redirecciona a no-autorizado
-        if($request->age < 18) {
+        // if($request->age < 18) {
+        if(!auth()->check() || auth()->user()->email !== 'manuel@pruebas.com') { // Prueba con campos de la BBDD
             return to_route('no-autorizado');
         }
 
