@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+{{-- Al ser un componente de clase se puede simplemente usar el kebab case del AppLayout --}}
+<x-app-layout></x-app-layout>
+
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -137,4 +140,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}
