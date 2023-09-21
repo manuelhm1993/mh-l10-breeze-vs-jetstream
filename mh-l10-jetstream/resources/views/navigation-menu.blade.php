@@ -1,9 +1,9 @@
 @php
     $nav_links = [
         [
-            'name'   => ucwords('home'),
-            'route'  => route('home'),
-            'active' => request()->routeIs('home'),
+            'name'   => ucwords('dashboard'),
+            'route'  => route('dashboard'),
+            'active' => request()->routeIs('dashboard'),
         ],
     ];
 @endphp
