@@ -29,4 +29,4 @@ Route::middleware([
 
 Route::get('prueba', function () {
     return 'Has accedido correctamente a esta ruta';
-});
+})->middleware('age'); // Asignarle el middleware a la ruta
