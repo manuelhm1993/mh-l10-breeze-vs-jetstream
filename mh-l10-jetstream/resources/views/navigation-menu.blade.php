@@ -5,6 +5,11 @@
             'route'  => route('home'),
             'active' => request()->routeIs('home'),
         ],
+        [
+            'name'   => ucwords('dashboard'),
+            'route'  => route('dashboard'),
+            'active' => request()->routeIs('dashboard'),
+        ],
     ];
 @endphp
 
@@ -23,6 +28,11 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     @foreach ($nav_links as $nav_link)
+                        {{-- Validar si el usuario está autenticado y mostrar o no el dashboard --}}
+                        @if (($nav_link['name'] === 'Dashboard') && (!Auth::check()))
+                            @continue
+                        @endif
+
                         <x-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
                             {{ __($nav_link['name']) }}
                         </x-nav-link>
@@ -157,6 +167,11 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             @foreach ($nav_links as $nav_link)
+                {{-- Validar si el usuario está autenticado y mostrar o no el dashboard --}}
+                @if (($nav_link['name'] === 'Dashboard') && (!Auth::check()))
+                    @continue
+                @endif
+
                 <x-responsive-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
                     {{ __($nav_link['name']) }}
                 </x-responsive-nav-link>
