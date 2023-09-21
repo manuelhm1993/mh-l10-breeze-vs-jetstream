@@ -30,3 +30,7 @@ Route::middleware([
 Route::get('prueba', function () {
     return 'Has accedido correctamente a esta ruta';
 })->middleware('age'); // Asignarle el middleware a la ruta
+
+Route::get('no-autorizado', function () {
+    return 'Usted no es mayor de edad';
+})->name('no-autorizado');

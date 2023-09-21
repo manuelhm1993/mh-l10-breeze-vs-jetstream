@@ -15,8 +15,12 @@ class CheckAge
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // return $next($request);
+        // Si el usuario es menor de edad se redirecciona a no-autorizado
+        if($request->age < 18) {
+            return to_route('no-autorizado');
+        }
 
-        return to_route('home');
+        // Si el usuario es mayor de edad, se le permite el acceso
+        return $next($request);
     }
 }
