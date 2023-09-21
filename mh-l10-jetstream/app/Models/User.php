@@ -76,4 +76,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * Get the videos for the user.
+     */
+    public function videos(): HasMany
+    {
+        return $this->hasMany(Video::class);
+    }
 }
